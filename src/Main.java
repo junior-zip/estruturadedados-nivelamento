@@ -1,88 +1,108 @@
-import Calculo.Divisao;
-import Calculo.Multiplicacao;
-import Calculo.Subtracao;
-import Calculo.soma;
+import Calculo.*;
 
+import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        try{
 
-        Scanner sc = new Scanner(System.in);
-        System.out.println("calculadora automatica!");
+            Scanner sc = new Scanner(System.in);
+            System.out.println("calculadora automatica!");
 
-        System.out.println("Digite um número");
-         int num1 = sc.nextInt();
-        System.out.println("Digite outro número");
-         int num2 = sc.nextInt();
-
-        int alternativa = 0;
-        int count = 0;
-        while(alternativa != 5){
-            System.out.println("Qual operação deseja realizar? Soma: 1, subtração: 2, multiplicação: 3, divisão: 4 ");
-            alternativa = sc.nextInt();
+            int num1 = 0;
+            int num2 = 0;
+            int alternativa = 0;
+            while(alternativa != 8){
+                System.out.println("Qual operação deseja realizar? Soma: 1, subtração: 2, multiplicação: 3, divisão: 4,  raiz quadrada: 5, potenciacao: 6, Logaritmo: 7, Sair: 8");
+                alternativa = sc.nextInt();
 
 
-            if(alternativa == 1){
-                soma Soma = new soma(num1, num2);
+                if(alternativa == 1){
+                    System.out.println("Digite um número:");
+                    num1 = sc.nextInt();
+                    System.out.println("Digite outro número:");
+                    num2 = sc.nextInt();
 
-                System.out.println(" A soma dos números é: " + Soma.calc( num1, num2));
+                    soma Soma = new soma(num1, num2);
 
-            }else if (alternativa == 2){
-                Subtracao subtracao = new Subtracao(num1, num2);
+                    System.out.println(" A soma dos números é: " + Soma.calc( num1, num2));
 
-                System.out.println("A subtracao dos números é: " + subtracao.calc(num1, num2 ));
-            }  else if(alternativa == 3) {
+                }else if (alternativa == 2){
+                    System.out.println("Digite um número:");
+                    num1 = sc.nextInt();
+                    System.out.println("Digite outro número:");
+                    num2 = sc.nextInt();
+                    Subtracao subtracao = new Subtracao(num1, num2);
 
-                Multiplicacao multiplicao = new Multiplicacao(num1, num2);
+                    System.out.println("A subtracao dos números é: " + subtracao.calc(num1, num2 ));
+                }  else if(alternativa == 3) {
 
-                System.out.println("A multiplicação dos números é: " + multiplicao.calc(num1, num2));
+                    System.out.println("Digite um número:");
+                    num1 = sc.nextInt();
+                    System.out.println("Digite outro número:");
+                    num2 = sc.nextInt();
 
-            }else if(alternativa == 4){
-                Divisao divisao = new Divisao(num1, num2);
+                    Multiplicacao multiplicao = new Multiplicacao(num1, num2);
 
-                System.out.println("A divisao dos números é: "+ divisao.calc(num1, num2));
+                    System.out.println("A multiplicação dos números é: " + multiplicao.calc(num1, num2));
+
+                }else if(alternativa == 4){
+                    System.out.println("Digite um número:");
+                    num1 = sc.nextInt();
+                    System.out.println("Digite outro número:");
+                    num2 = sc.nextInt();
+
+                    Divisao divisao = new Divisao(num1, num2);
+
+                    System.out.println("A divisao dos números é: "+ divisao.calc(num1, num2));
 
 
-            }else{
-                alternativa = 5;
-                System.out.println("Até mais!");
 
+                }else if(alternativa == 5) {
+                    Raiz raiz = new Raiz();
+                    System.out.println("Digite um número para calcular a raiz:");
+                    num1 = sc.nextInt();
+
+                    System.out.println("A raiz quadrada de num1 é: " + raiz.calc(num1));
+
+                }else if(alternativa == 6){
+                    System.out.println("Digite um número:");
+                    num1 = sc.nextInt();
+                    System.out.println("Digite outro número:");
+                    num2 = sc.nextInt();
+
+                    Potenciacao potenciacao = new Potenciacao();
+
+                    System.out.println("O calculo das potencias é: " + potenciacao.calc(num1, num2));
+
+                }else if(alternativa == 7){
+                    System.out.println("Digite o número para calcular o logaritmo");
+                    num1 = sc.nextInt();
+                    System.out.println("Digite a base do logaritmo");
+                    num2 = sc.nextInt();
+
+                    Logaritmo logaritmo = new Logaritmo();
+                    System.out.println("O resultado do calculo do  logaritmo é: " + logaritmo.calc(num1, num2));
+
+                }
+                else{
+                    alternativa = 8;
+                    System.out.println("Até mais!");
+
+
+                }
 
             }
 
+            sc.close();
+
+
+        }catch (InputMismatchException e){
+            System.out.println(e.getMessage());
+
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        sc.close();
 
     }
 }

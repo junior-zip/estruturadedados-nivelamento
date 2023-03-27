@@ -1,15 +1,20 @@
 package Calculo;
 
+import calc.Calcular1;
 import calc.calcular;
 
-public class Subtracao implements calcular {
+public class Raiz implements Calcular1 {
 
     private Integer num1;
     private Integer num2;
 
-    public Subtracao(Integer num1, Integer num2) {
-        this.num1 = num1;
-        this.num2 = num2;
+
+
+    @Override
+    public double calc(Integer num1) {
+        double rquadrada = Math.sqrt(num1);
+
+        return rquadrada;
     }
 
     public Integer getNum1() {
@@ -26,12 +31,5 @@ public class Subtracao implements calcular {
 
     public void setNum2(Integer num2) {
         this.num2 = num2;
-    }
-
-    @Override
-    public double calc(Integer num1, Integer num2) {
-        int sub = num1 - num2;
-
-        return sub;
     }
 }

@@ -1,9 +1,9 @@
 package calc;
 
-public interface calcular {
+public interface calcular   {
 
 
-    int calc(Integer num1, Integer num2);
+    double calc(Integer num1, Integer num2);
 
 
 

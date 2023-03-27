@@ -29,7 +29,7 @@ public class Multiplicacao implements calcular {
 
 
     @Override
-    public int calc(Integer num1, Integer num2) {
+    public double calc(Integer num1, Integer num2) {
         int multi = num1 * num2;
 
         return multi;

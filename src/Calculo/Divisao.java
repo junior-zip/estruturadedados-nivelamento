@@ -29,7 +29,7 @@ public class Divisao implements calcular {
     }
 
     @Override
-    public int calc(Integer num1, Integer num2) {
+    public double calc(Integer num1, Integer num2) {
         int div = num1 / num2;
         return div;
     }

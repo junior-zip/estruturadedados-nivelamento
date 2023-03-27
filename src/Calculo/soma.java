@@ -31,7 +31,7 @@ public class soma implements calcular {
     }
 
     @Override
-    public int calc(Integer num1, Integer num2) {
+    public double calc(Integer num1, Integer num2) {
         int soma = num1 + num2;
 
 
