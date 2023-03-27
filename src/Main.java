@@ -1,63 +1,74 @@
+import Calculo.Divisao;
+import Calculo.Multiplicacao;
+import Calculo.Subtracao;
+import Calculo.soma;
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+        System.out.println("calculadora automatica!");
+
+        System.out.println("Digite um número");
+         int num1 = sc.nextInt();
+        System.out.println("Digite outro número");
+         int num2 = sc.nextInt();
+
+        int alternativa = 0;
+        int count = 0;
+        while(alternativa != 5){
+            System.out.println("Qual operação deseja realizar? Soma: 1, subtração: 2, multiplicação: 3, divisão: 4 ");
+            alternativa = sc.nextInt();
 
 
-        int num1 = 0;
+            if(alternativa == 1){
+                soma Soma = new soma(num1, num2);
 
-        int num2 = 0;
-        System.out.println("Diite uma alternativa: adição: 1, subtração: 2 ou multiplicação: 3, divisão: 4");
-        int pergunta = sc.nextInt();
+                System.out.println(" A soma dos números é: " + Soma.calc( num1, num2));
+
+            }else if (alternativa == 2){
+                Subtracao subtracao = new Subtracao(num1, num2);
+
+                System.out.println("A subtracao dos números é: " + subtracao.calc(num1, num2 ));
+            }  else if(alternativa == 3) {
+
+                Multiplicacao multiplicao = new Multiplicacao(num1, num2);
+
+                System.out.println("A multiplicação dos números é: " + multiplicao.calc(num1, num2));
+
+            }else if(alternativa == 4){
+                Divisao divisao = new Divisao(num1, num2);
+
+                System.out.println("A divisao dos números é: "+ divisao.calc(num1, num2));
 
 
-        if(pergunta == 1){
-            System.out.println("Primeiro numero:");
-            num1 = sc.nextInt();
+            }else{
+                alternativa = 5;
+                System.out.println("Até mais!");
 
-            System.out.println("Segundo numero:");
-            num2 = sc.nextInt();
 
-            int soma = num1 + num2;
-
-            System.out.println("A soma de " + num1 + "+"+ num2 + "é igual a: " + soma);
-
-        }else if (pergunta == 2) {
-            System.out.println("Primeiro numero:");
-            num1 = sc.nextInt();
-
-            System.out.println("Segundo numero:");
-            num2 = sc.nextInt();
-
-            int subtracao = num1 - num2;
-
-            System.out.println("A subtracao de " + num1 + " e "+ num2 + "é igual a: " + subtracao);
-
-        }else if (pergunta == 3) {
-            System.out.println("Primeiro numero:");
-            num1 = sc.nextInt();
-
-            System.out.println("Segundo numero:");
-            num2 = sc.nextInt();
-
-            int multiplicao = num1 * num2;
-
-            System.out.println("A multiplicao de " + num1 + " e "+ num2 + "é igual a: " + multiplicao);
-
-        }else if (pergunta == 4) {
-            System.out.println("Primeiro numero:");
-            num1 = sc.nextInt();
-
-            System.out.println("Segundo numero:");
-            num2 = sc.nextInt();
-
-            int divisao = num1 / num2;
-
-            System.out.println("A divisao de " + num1 + " e "+ num2 + "é igual a: " + divisao);
+            }
 
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
