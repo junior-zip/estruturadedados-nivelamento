@@ -9,11 +9,6 @@ public class soma implements calcular {
     private Integer pergunta;
 
 
-    public soma(Integer num1, Integer num2) {
-        this.num1 = num1;
-        this.num2 = num2;
-    }
-
     public Integer getNum1() {
         return num1;
     }
